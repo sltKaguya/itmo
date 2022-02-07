@@ -23,9 +23,38 @@
 \maketitle
 \newpage
 \pagenumbering{arabic}
+
+\subparagraph*{Что добавить}
+\begin{enumerate}
+    \item std;
+    \item Типы данных;
+    \item Ввод-вывод;
+    \item Функции и методы.
+\end{enumerate}
+
+\begin{center}
+    \section*{Начало работы с c++}
+\end{center}
+
+\subsection*{Namespace std}
+\qquad\textbf{std} -- стандартное (\textbf{st}andar\textbf{d}) пространство
+
+\textbf{using namespace} и оператор \textbf{::}
+
+\subsection*{Типы данных}
+
+\subsection*{Ввод-вывод}
+
+\subsection*{Основные функции и методы}
+
+\begin{itemize}
+    \item getline(std::cin, foo) -- объектом cin записывает текст из командной строки в строку foo. Позволяет получить строку с пробелами, тогда как просто cin прекратит считывать после пробела
+\end{itemize}
+
 \begin{center}
     \section*{ООП, классы}
 \end{center}
+
 \subsection*{Классы}
 
 \qquadКласс -- это тип данных, который состоит из свойств и методов. Также можно сказать, что это шаблон для создания объектов. Свойства класса -- любые данные, которые характеризуют объект класса. Методы класса -- привязанные к этому классу функции, выполняющие действия над данными (свойствами) класса.
@@ -35,6 +64,16 @@
 \textbf{class} ClassName \{\newline
 some\_variable\_1;\newline
 some\_variable\_2;\newline
-some\_function();\newline
+ClassName some\_method()\{\};\newline
+\}
+
+\subsection*{Конструкторы}
+
+\qquadКонструктор -- это метод, который выполняется при объявлении или инициализации класса. В отличие от метода, он прописывается как:
+\vspace{6pt}\newline
+\textbf{class} ClassName \{\newline
+ClassName(variables) \{\newline
+code\newline
+\}\newline
 \}
 \end{document}
