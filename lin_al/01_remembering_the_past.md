@@ -28,8 +28,7 @@ $\left(\begin{matrix}
     107 \\
     -539 \\
     934
-\end{matrix}\right)^{II+2I,III-I\dots} \sim \\
-\sim \left(\begin{matrix}
+\end{matrix}\right)^{II+2I,III-I\dots} \sim \left(\begin{matrix}
     1 & -1 & -3 & 5 & -8 \\
     0 & 1 & -3 & -4 & 6 \\
     0 & -1 & 2 & 2 & -3 \\
@@ -41,7 +40,8 @@ $\left(\begin{matrix}
     37 \\
     -119 \\
     164
-\end{matrix}\right)^{I+II,III+II\dots} \sim \left(\begin{matrix}
+\end{matrix}\right)^{I+II,III+II\dots} \sim \\
+\sim \left(\begin{matrix}
     1 & 0 & -6 & 1 & -2 \\
     0 & 1 & -3 & -4 & 6 \\
     0 & 0 & -1 & -2 & 3 \\
@@ -53,8 +53,7 @@ $\left(\begin{matrix}
     -8 \\
     16 \\
     -16
-\end{matrix}\right)^{I-6III,II-3III\dots} \sim \\
-\sim \left(\begin{matrix}
+\end{matrix}\right)^{I-6III,II-3III\dots} \sim \left(\begin{matrix}
     1 & 0 & 0 & 13 & -20 \\
     0 & 1 & 0 & 2 & -3 \\
     0 & 0 & 1 & 2 & -3 \\
@@ -66,7 +65,8 @@ $\left(\begin{matrix}
     8 \\
     32 \\
     -80
-\end{matrix}\right)^{\frac{IV}{8},I-13IV\dots} \sim \left(\begin{matrix}
+\end{matrix}\right)^{\frac{IV}{8},I-13IV\dots} \sim \\
+\sim \left(\begin{matrix}
     1 & 0 & 0 & 0 & -0,5 \\
     0 & 1 & 0 & 0 & 0 \\
     0 & 0 & 1 & 0 & 0 \\
@@ -78,8 +78,7 @@ $\left(\begin{matrix}
     0 \\
     4 \\
     0
-\end{matrix}\right)^{-\frac{V}{12},I+\frac{V}{2},\dots} \sim \\
-\sim \left(\begin{matrix}
+\end{matrix}\right)^{-\frac{V}{12},I+\frac{V}{2},\dots} \sim \left(\begin{matrix}
     1 & 0 & 0 & 0 & 0 \\
     0 & 1 & 0 & 0 & 0 \\
     0 & 0 & 1 & 0 & 0 \\
@@ -148,7 +147,7 @@ $\begin{cases}
     \xi^1 - 2\xi^4 - 1\xi^5 = 0 \\
     \xi^2 + \xi^4 + 2\xi^5 = 0 \\
     \xi^3 - \xi^4 = 0
-\end{cases} \implies \begin{cases}
+\end{cases} \iff \begin{cases}
     \xi^1 = 2\xi^4 + 1\xi^5 \\
     \xi^2 = -\xi^4 - 2\xi^5 \\
     \xi^3 = \xi^4 \\
@@ -310,4 +309,10 @@ $\left(\begin{matrix}
     -1 & 1 & 0
 \end{pmatrix}, \ \begin{pmatrix}
     2 & 0 & 1
+\end{pmatrix}$
+
+Ответ: матрица  с базисными вектормаи ядра по столбцам: $\begin{pmatrix}
+    -1 & 2 \\
+    1 & 0 \\
+    0 & 1
 \end{pmatrix}$
