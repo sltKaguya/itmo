@@ -274,9 +274,40 @@ $A = \begin{pmatrix}
 Автоморфизм $\mathcal{A}: \R^3 \to \R^3$ задан в стандартном базисе матрицей $A$. Определить ядро указанного автоморфизма, если $A = \begin{pmatrix}
 1 & 1 & -2 \\
 0 & 0 & 0 \\
--1 & -1 & 2 \\
+-1 & -1 & 2
 \end{pmatrix}$
 
 Ответ записать в форме матрицы с базисными векторами ядра по столбцам.
 
 Решение:
+
+Найдём ядро автоморфизма $K$ через алгоритм Чуркина:
+
+$\left(\begin{array}{c|c}
+    A^T & E
+\end{array}\right) \sim \left(\begin{array}{c|c}
+    I & V \\
+    \hline
+    O & K
+\end{array}\right)$
+
+$\left(\begin{matrix}
+1 & 0 & -1 \\
+1 & 0 & -1 \\
+-2 & 0 & 2
+\end{matrix}\right|\left.\begin{matrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{matrix}\right) \sim \left(\begin{array}{ccc|ccc}
+1 & 0 & -1 & 1 & 0 & 0\\
+\hline
+0 & 0 & 0 & -1 & 1 & 0 \\
+0 & 0 & 0 & 2 & 0 & 1
+\end{array}\right)$
+
+Базис ядра автоморфизма $K = \begin{pmatrix}
+    -1 & 1 & 0
+\end{pmatrix}, \ \begin{pmatrix}
+    2 & 0 & 1
+\end{pmatrix}$
