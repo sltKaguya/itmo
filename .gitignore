@@ -6,6 +6,6 @@
 *.synctex.gz
 ____________________
 
+*.DS_Store
 *.jpg
-*.txt
 *.exe
