@@ -7,11 +7,11 @@ MODULES = point.o main.o
 classes.exe: $(MODULES)
 	$(CC) $(MODULES) -o logs.exe
 
-main.o: $(SRC)/main.c
-	$(CC) $(FLAGS) $(SRC)/main.c
+main.o: $(SRC)/main.cpp
+	$(CC) $(FLAGS) $(SRC)/main.cpp
 
-point.o: $(SRC)/point.c $(INC)/point.h
-	$(CC) $(FLAGS) $(SRC)/point.c
+point.o: $(SRC)/point.cpp $(INC)/point.h
+	$(CC) $(FLAGS) $(SRC)/point.cpp
 
 clean:
 	rm -f $(MODULES)
