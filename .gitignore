@@ -6,6 +6,17 @@
 *.synctex.gz
 ____________________
 
+#Extensions to ignore
 *.DS_Store
 *.jpg
 *.exe
+*.o
+____________________
+
+#Folders to ignore
+.vscode
+prog/01_oop_classes/CMakeFiles
+____________________
+
+#Files to ignore
+prog/01_oop_classes/CMakeCache.txt
