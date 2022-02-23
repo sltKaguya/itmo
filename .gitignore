@@ -8,7 +8,6 @@ ____________________
 
 #Extensions to ignore
 *.DS_Store
-*.jpg
 *.exe
 *.o
 ____________________
