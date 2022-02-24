@@ -4,8 +4,8 @@ INC = include
 SRC = src
 MODULES = point.o main.o
 
-classes.exe: $(MODULES)
-	$(CC) $(MODULES) -o logs.exe
+main.exe: $(MODULES)
+	$(CC) $(MODULES) -o main.exe
 
 main.o: $(SRC)/main.cpp
 	$(CC) $(FLAGS) $(SRC)/main.cpp
