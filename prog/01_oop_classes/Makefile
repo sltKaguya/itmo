@@ -2,7 +2,7 @@ CC = g++
 FLAGS = -Wextra -Wall -g -c
 INC = include
 SRC = src
-MODULES = polygon.o closedchain.o polychain.o point.o main.o
+MODULES = triangle.o polygon.o closedchain.o polychain.o point.o main.o
 
 main.exe: $(MODULES)
 	$(CC) $(MODULES) -o main.exe
@@ -21,6 +21,9 @@ closedchain.o: $(SRC)/closedchain.cpp $(INC)/closedchain.h
 
 polygon.o: $(SRC)/polygon.cpp $(INC)/polygon.h
 	$(CC) $(FLAGS) $(SRC)/polygon.cpp
+
+triangle.o: $(SRC)/triangle.cpp $(INC)/triangle.h
+	$(CC) $(FLAGS) $(SRC)/triangle.cpp
 
 clean:
 	rm -f $(MODULES)
