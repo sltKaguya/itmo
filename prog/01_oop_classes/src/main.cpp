@@ -2,6 +2,7 @@
 #include "../include/polychain.h"
 #include "../include/closedchain.h"
 #include "../include/polygon.h"
+#include "../include/triangle.h"
 
 int main() {
     Point a {3, 4};
@@ -76,5 +77,20 @@ int main() {
     std::cout << "Area of this square is "
             << square.Area()
             << std::endl;
+    
+    Point t1 {0, 0};
+    Point t2 {2, 0};
+    Point t3 {2, 2};
+    Point t0 {0, 2};
+    Triangle triangle;
+    triangle.PushBack(&t1);
+    triangle.PushBack(&t2);
+    triangle.PushBack(&t3);
+    triangle.PushBack(&t0);
+    PrintChain(triangle);
+    std::cout << "Area of this triangle is "
+            << triangle.Area()
+            << std::endl;
+
     return 0;
 }
