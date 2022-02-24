@@ -3,6 +3,7 @@
 #include "../include/closedchain.h"
 #include "../include/polygon.h"
 #include "../include/triangle.h"
+#include "../include/trapeze.h"
 
 int main() {
     Point a {3, 4};
@@ -92,5 +93,18 @@ int main() {
             << triangle.Area()
             << std::endl;
 
+    Point tr1 {0, 0};
+    Point tr2 {2, 0};
+    Point tr3 {1.5, 1};
+    Point tr0 {0.5, 1};
+    Trapeze trapeze;
+    trapeze.PushBack(&tr1);
+    trapeze.PushBack(&tr2);
+    trapeze.PushBack(&tr3);
+    trapeze.PushBack(&tr0);
+    PrintChain(trapeze);
+    std::cout << "Area of this trapeze is "
+            << trapeze.Area()
+            << std::endl;
     return 0;
 }
