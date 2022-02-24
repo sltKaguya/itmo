@@ -10,6 +10,7 @@ ____________________
 *.DS_Store
 *.exe
 *.o
+*.plist
 ____________________
 
 #Folders to ignore
