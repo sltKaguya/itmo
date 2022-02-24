@@ -10,7 +10,7 @@ class Point {
      * x_val - position on X-axis
      * y_val - position on Y-axis
      */
-    Point(int x_val=0, int y_val=0);
+    Point(double x_val=0, double y_val=0);
 
     /**
      * Construct a copy of a given Point object
@@ -27,29 +27,29 @@ class Point {
     /**
      * Get the value on X-axis
      */
-    int x_val() const;
+    double x_val() const;
 
     /**
      * Get the value on Y-axis
      */
-    int y_val() const;
+    double y_val() const;
 
     /**
      * Assign one Point object values to another existing
      * 
      * other - Point object to assign
      */
-    Point& operator =(const Point &other);
+    Point& operator=(const Point &other);
 
     private:
     /**
      * Positions on X and Y axes
      */
-    int x, y;
+    double x, y;
 };
 
 /**
- * Print given Point objects values on X and Y axes
+ * Print given Point object values on X and Y axes in (x; y) format
  * 
  * point - Point object to print
  */
