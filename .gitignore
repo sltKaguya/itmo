@@ -8,6 +8,7 @@ ____________________
 
 #Extensions to ignore
 *.DS_Store
+*.docx
 *.exe
 *.o
 ____________________
@@ -16,3 +17,5 @@ ____________________
 .vscode
 main.exe.dSYM
 ____________________
+#Files to ignore
+prog/01_oop_classes/note.md
