@@ -2,6 +2,8 @@
 
 #include "polygon.h"
 
+const double PI = acos(-1);
+
 class RegularPolygon: public Polygon {
     public:
     /**
@@ -11,8 +13,10 @@ class RegularPolygon: public Polygon {
      * nCor - amount of corners
      * aCor - angle coordinate Phi
      */
-    RegularPolygon(double xCenter=0, double yCenter=0, double rad=0, \
-        int nCor=1, int aCor=0);
+    RegularPolygon();
+
+    void SetPolygon(double xCenter=0, double yCenter=0, double rad=0, \
+    int nity=0, int Phi=0);
     
     /**
      * Construct a copy of a given RegularPolygon object
@@ -21,21 +25,23 @@ class RegularPolygon: public Polygon {
      */
     RegularPolygon(RegularPolygon const &other);
 
+    double RPArea();
+
     private:
 
     /**
      * Size because it's easier RN
      */
-    int size;
+    //int size;
     
     /**
      * Points because it's easier RN
      */
-    std::vector<Point*> points;
+    //std::vector<Point*> points;
     /**
      * Center of circumcircle
      */
-    double xC, yC;
+    //double xC, yC;
 
     /**
      * Radius of inscribed circumcircle
@@ -46,4 +52,6 @@ class RegularPolygon: public Polygon {
      * Amount of corners and the angle coordinate
      */
     //int n, Phi;
+
+    std::vector<Point> regcoords;
 };

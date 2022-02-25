@@ -1,34 +1,43 @@
 #include "../include/regularpoly.h"
 
-RegularPolygon::RegularPolygon(double xCenter, double yCenter, double rad, \
-    int nCor, int aCor)
-    : xC(xCenter)
-    , yC(yCenter)
-    , size(nCor+1)
-    , points({})
-{
-    double radius = rad;
-    int n = nCor;
-    int Phi = aCor;
+RegularPolygon::RegularPolygon(): Polygon(), regcoords({}) {}
 
-    if(n == 0) {
+void RegularPolygon::SetPolygon(double xCenter, double yCenter, double rad, \
+    int nity, int Phi) {
+    size = nity + 1;
+    if(nity < 3) {
         std::cout << "Incorrect Polygon!" << std::endl;
         return;
     }
 
-    for (int i = 0; i < n; i++) {
-        double x_temp = xC + radius * cos((double) Phi + (2*M_PI*i)/n);
-        double y_temp = yC + radius * cos((double) Phi + (2*M_PI*i)/n);
-        Point tempPoint = {x_temp, y_temp};
-        points.push_back(&tempPoint);
+    for (int i = 0; i < nity; i++) {
+        double x_temp = xCenter + (rad * cos(Phi + ((2*PI*i)/nity)));
+        double y_temp = yCenter + (rad * sin(Phi + ((2*PI*i)/nity)));
+        Point tempPoint {x_temp, y_temp};
+        regcoords.push_back(tempPoint);
     }
-
-    points.push_back(points[0]);
+    regcoords.push_back(regcoords[0]);
 }
 
-RegularPolygon::RegularPolygon(RegularPolygon const &other)
-    : xC(other.xC)
-    , yC(other.yC)
-    , points(other.points)
-    , size(other.size)
-{}
+RegularPolygon::RegularPolygon(RegularPolygon const &other) {
+    regcoords = other.regcoords;
+    size = other.size;
+}
+
+double RegularPolygon::RPArea() {
+    double area = 0;
+    if (size < 4) {
+        std::cout << "Can't count area, not a polygon" <<std::endl;
+        
+        return area;
+    }
+    for (int i = 0; i < size - 2; i++) {
+        area += regcoords[i].x_val()*regcoords[i+1].y_val() - \
+            regcoords[i+1].x_val()*regcoords[i].y_val();
+    }
+    area += regcoords[size - 2].x_val()*regcoords[0].y_val() - \
+        regcoords[0].x_val()*regcoords[size - 2].y_val();
+    area = 0.5 * std::abs(area);
+
+    return area;
+}
