@@ -4,6 +4,7 @@
 #include "../include/polygon.h"
 #include "../include/triangle.h"
 #include "../include/trapeze.h"
+#include "../include/regularpoly.h"
 
 int main() {
     Point a {3, 4};
@@ -105,5 +106,12 @@ int main() {
     std::cout << "Area of this trapeze is "
             << trapeze.Area()
             << std::endl;
+
+    RegularPolygon myRegPoly;
+    myRegPoly.SetPolygon(1, 1, 1, 3, 1);
+    std::cout << "Area of this regular polygon is "
+            << myRegPoly.RPArea()
+            << std::endl;
+
     return 0;
 }
