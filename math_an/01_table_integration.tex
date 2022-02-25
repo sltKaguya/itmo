@@ -1,0 +1,60 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{geometry}
+\geometry{
+    left=2cm,
+    right=2cm,
+    top=2cm,
+    bottom=2cm
+}
+
+\title{Домашнее задание №1\\
+    \large Табличное интегрирование}
+\author{Ботт Борис\\
+    Группа M3104}
+\date{25 февраля 2022 г.}
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+
+\begin{enumerate}
+    \item $\int\frac{x - 1}{x^2 - x - 1}dx$:
+    $$\int\frac{x - 1}{x^2 - x - 1}dx = \int\frac{d(\frac{x^2}{2} - x)}{x^2 - x - 1} = \frac{1}{2}\int\frac{d(x^2 - 2x)}{x^2 - x - 1} =$$
+    $$= \frac{1}{2}\left(\int\frac{d(x^2 - x - 1)}{x^2 - x - 1} - \int\frac{dx}{x^2 - x - 1}\right) = \left[\begin{array}{rcl}
+        t & = & x^2 - x - 1
+    \end{array}\right] =$$
+    $$= \frac{1}{2}\left(\int\frac{dt}{t} - \int\frac{dx}{\left(x - \frac{1}{2}\right)^2 - \frac{5}{4}}\right) = \left[\begin{array}{rcl}
+        u & = & x - \frac{1}{2} \\
+        du & = & dx
+    \end{array}\right] = \frac{1}{2}\left(\ln|t| - \int\frac{du}{u^2 - \frac{5}{4}}\right) =$$
+    $$\frac{1}{2}\left(\ln|t| + \int\frac{du}{\frac{5}{4} - u^2}\right) = \dfrac{\ln|x^2 - x - 1|}{2} + \dfrac{1}{4\sqrt{\frac{5}{4}}}\cdot\ln\left|\dfrac{\sqrt{\frac{5}{4}} + x - \frac{1}{2}}{\sqrt{\frac{5}{4}} - x + \frac{1}{2}}\right|{} + C$$
+    Ответ: $\dfrac{\ln|x^2 - x - 1|}{2} + \dfrac{1}{4\sqrt{\frac{5}{4}}}\cdot\ln\left|\dfrac{\sqrt{\frac{5}{4}} + x - \frac{1}{2}}{\sqrt{\frac{5}{4}} - x + \frac{1}{2}}\right|{} + C$
+
+    \item $\int\frac{3x - 6}{\sqrt{x^2 - 4x + 5}}dx$:
+    $$\int\dfrac{3x - 6}{\sqrt{x^2 - 4x + 5}}dx = 3\int\dfrac{x - 2}{\sqrt{\left(x - 2\right)^2 + 1}}dx = \left[\begin{array}{rcl}
+        t & = & x - 2 \\
+        dt & = & dx
+    \end{array}\right] = 3\int\dfrac{t}{\sqrt{t^2 + 1}}dt =$$
+    $$= \left[\begin{array}{rcl}
+        u & = & t^2 + 1 \\
+        du & = & 2tdt \\
+        dt & = & \frac{du}{2t}
+    \end{array}\right] = \frac{3}{2}\int\dfrac{du}{\sqrt{u}} = \frac{3}{2}\int u^{-\frac{1}{2}}du = \frac{3u^{\frac{1}{2}}}{2\cdot\frac{1}{2}} + C = 3\sqrt{(x - 2)^2 + 1}  + C$$
+    Ответ: $3\sqrt{x^2 - 4x + 5}  + C$
+
+    \item $\int\frac{x^2 - 1}{x^4 + 1}dx$:
+    $$\int\frac{x^2 - 1}{x^4 + 1}dx = \int\frac{x^2(1 - \frac{1}{x^2})}{x^2(x^2 + \frac{1}{x^2})}dx = \int\frac{1 - \frac{1}{x^2}}{(x + \frac{1}{x})^2 - 2}dx = \left[\begin{array}{rcl}
+        t & = & x + \dfrac{1}{x} \\
+        dt & = & (1 + \dfrac{1}{x^2})dx \\
+        dx & = & \dfrac{dt}{1 + \frac{1}{x^2}}
+    \end{array}\right] =$$
+    $$= \int\frac{(1-\frac{1}{x^2})dt}{(t^2-2)(1-\frac{1}{x^2})} = -\int\frac{dt}{2 - t^2} = -\frac{1}{2\sqrt{2}}\ln\left|\frac{\sqrt{2} + x + \frac{1}{x}}{\sqrt{2} - x - \frac{1}{x}}\right| + C$$
+    Ответ: $-\frac{1}{2\sqrt{2}}\ln\left|\frac{\sqrt{2} + x + \frac{1}{x}}{\sqrt{2} - x - \frac{1}{x}}\right| + C$
+\end{enumerate}
+\end{document}
