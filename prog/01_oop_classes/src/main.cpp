@@ -1,10 +1,7 @@
-#include "../include/point.h"
-#include "../include/polychain.h"
-#include "../include/closedchain.h"
-#include "../include/polygon.h"
 #include "../include/triangle.h"
 #include "../include/trapeze.h"
 #include "../include/regularpoly.h"
+#include "../include/polynomial.h"
 
 int main() {
     Point a {3, 4};
@@ -113,5 +110,7 @@ int main() {
             << myRegPoly.RPArea()
             << std::endl;
 
+    Polynomial myPolynomial;
+    myPolynomial.CreatePolynomial({ {1, 2}, {4, 1}, {2, 0}});
     return 0;
 }
