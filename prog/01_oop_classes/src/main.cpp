@@ -102,7 +102,6 @@ int main() {
     trapeze.PushBack(&tr2);
     trapeze.PushBack(&tr3);
     trapeze.PushBack(&tr0);
-    PrintChain(trapeze);
     std::cout << "Area of this trapeze is "
             << trapeze.Area()
             << std::endl;
