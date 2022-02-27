@@ -15,9 +15,8 @@
 
 \title{Домашнее задание №1\\
     \large Табличное интегрирование}
-\author{Ботт Борис\\
-    Группа M3104}
-\date{25 февраля 2022 г.}
+\author{sltKaguya}
+\date{25 февраля 2022 г. --- \today}
 
 \begin{document}
 \pagenumbering{gobble}
@@ -56,5 +55,151 @@
     \end{array}\right] =$$
     $$= \int\frac{(1-\frac{1}{x^2})dt}{(t^2-2)(1-\frac{1}{x^2})} = -\int\frac{dt}{2 - t^2} = -\frac{1}{2\sqrt{2}}\ln\left|\frac{\sqrt{2} + x + \frac{1}{x}}{\sqrt{2} - x - \frac{1}{x}}\right| + C$$
     Ответ: $-\frac{1}{2\sqrt{2}}\ln\left|\frac{\sqrt{2} + x + \frac{1}{x}}{\sqrt{2} - x - \frac{1}{x}}\right| + C$
+
+    \item $\int\frac{e^xdx}{\sqrt{4-e^{2x}}}$:
+    $$\int\frac{e^xdx}{\sqrt{4-e^{2x}}} = \left[\begin{array}{rcl}
+        t & = & e^x \\
+        dt & = & e^xdx \\
+        dx & = & \frac{dt}{e^x} \\
+        t^2 & = & e^{2x}
+    \end{array}\right] = \int\frac{tdt}{t\sqrt{2^2 - t^2}} = \arcsin\frac{t}{a} + C = \arcsin\frac{e^x}{2} + C$$
+    Ответ: $\arcsin\frac{e^x}{2} + C$
+
+    \item $\int\frac{dx}{x\ln x\ln\ln x}$:
+    $$\int\frac{dx}{x\ln x\ln\ln x} = \left[\begin{array}{rcl}
+        t & = & \ln x \\
+        dt & = & \frac{dx}{x} \\
+        dx & = & xdt
+    \end{array}\right] = \int\frac{xdt}{xt\ln t} = \int\frac{d(\ln t)}{\ln t} = \ln|\ln t| + C =$$
+    $$= \ln|\ln\ln x| + C$$
+    Ответ: $\ln|\ln\ln x| + C$
+
+    \item $\int\frac{\sin xdx}{\sqrt{1 + 2\cos x}}$:
+    $$\int\frac{\sin xdx}{\sqrt{1 + 2\cos x}} = \left[\begin{array}{rcl}
+        t & = & 1 + 2\cos x \\
+        dt & = & -2\sin xdx \\
+        dx & = & \frac{dt}{-2\sin x}
+    \end{array}\right] = \int\frac{\sin xdt}{-2\sqrt{t}\sin x} = -\frac{1}{2}\int\frac{dt}{\sqrt{t}} =$$
+    $$= -\frac{1}{2}\int t^{-\frac{1}{2}}dt = -\frac{1}{2}\cdot\frac{t^{\frac{1}{2}}}{\frac{1}{2}} + C = -\sqrt{1 + 2\cos x} + C$$
+    Ответ: $-\sqrt{1 + 2\cos x} + C$
+
+    \item $\int\frac{\ln\tan x}{\sin(2x)}dx$:
+    $$\int\frac{\ln\tan x}{\sin(2x)}dx = \left[\begin{array}{rcl}
+        t & = & \tan x \\
+        dt & = & \frac{dx}{\cos^2x} \\
+        dx & = & dt\cos^2 x \\
+        \sin x & = & t\cos x
+    \end{array}\right] = \int\frac{\ln t\cos^2 xdt}{2\sin x\cos x} = \int \frac{\ln t\cos xdt}{2t\cos x} =$$
+    $$= \frac{1}{2}\int\frac{\ln tdt}{t} = \left[\begin{array}{rcl}
+        u & = & \ln t \\
+        du & = & \frac{dt}{t} \\
+        dt & = & tdu
+    \end{array}\right] = \frac{1}{2}\int\frac{utdu}{t} = \frac{1}{2}\int udu = \frac{u^2}{4} + C = \frac{\ln^2t}{4} + C = $$
+    $$= \frac{\ln^2\tan x}{4} + C$$
+    Ответ: $\frac{\ln^2\tan x}{4}+ C$
+
+    \item $\int\frac{\arctan\sqrt{x}}{(1 + x)\sqrt{x}}dx$:
+    $$\int\frac{\arctan\sqrt{x}}{(1 + x)\sqrt{x}}dx = \left[\begin{array}{rcl}
+        t & = & \arctan\sqrt{x} \\
+        dt & = & \frac{dx}{(1 + x)2\sqrt{x}} \\
+        dx & = & 2\sqrt{x}(1 + x)dt
+    \end{array}\right] = \int\frac{2t\sqrt{x}(1+x)dt}{(1+x)\sqrt{x}} = 2\int tdt =$$
+    $$= 2\frac{t^2}{2} + C = \arctan^2\sqrt{x} + C$$
+
+    \item $\int\frac{\arccos^2 2x}{\sqrt{1 - 4x^2}}dx$:
+    $$\int\frac{\arccos^2 2x}{\sqrt{1 - 4x^2}}dx = \left[\begin{array}{rcl}
+        t & = & \arccos^2 2x \\
+        dt & = & -\frac{dx}{\sqrt{1 - 4x^2}} \\
+        dx & = & -dt\sqrt{1 - 4x^2}
+    \end{array}\right] = -\int\frac{tdt\sqrt{1 - 4x^2}}{\sqrt{1 - 4x^2}} = -\int tdt =$$
+    $$= -\frac{t^2}{2} + C = -\frac{\arccos^2 2x}{2} + C$$
+    Ответ: $-\frac{\arccos^2 2x}{2} + C$
+
+    \item $\int\arccos(5x - 2)dx$:
+    $$\int\arccos(5x - 2)dx = \frac{1}{5}\int\arccos(5x - 2)d(5x - 2) = \left[\begin{array}{rcl}
+        t & = & 5x - 2 \\
+        dt & = & d(5x - 2)
+    \end{array}\right] =$$
+    $$= \frac{1}{5}\int\arccos(t)dt = \left[\begin{array}{rcl}
+        u & = & \arccos t \\
+        dv & = & dt
+    \end{array}\right. \implies \left.\begin{array}{rcl}
+        du & = & -\frac{dt}{\sqrt{1 - t^2}} \\
+        v & = & t
+    \end{array}\right] =$$
+    $$= \frac{1}{5}\left(\arccos t \cdot t + \int\frac{tdt}{\sqrt{1 -t^2}}\right) = \frac{t\arccos t}{5} + \frac{1}{10}\int(1 - t^2)^{-\frac{1}{2}}d(t^2) =$$
+    $$= \frac{t\arccos t}{5} - \frac{1}{10}\int(1 - t^2)^{-\frac{1}{2}}d(1 - t^2) = \frac{t\arccos t}{5} - \frac{(1 - t^2)^{\frac{1}{2}}}{5} + C =$$
+    $$= \frac{(5x - 2)\arccos(5x - 2) - \sqrt{1 - (5x - 2)^2}}{5} + C$$
+    Ответ: $\frac{(5x - 2)\arccos(5x - 2) - \sqrt{1 - (5x - 2)^2}}{5} + C$
+
+    \item $\int\frac{\arcsin x}{x^2}dx$:
+    $$\int\frac{\arcsin x}{x^2}dx = \left[\begin{array}{rcl}
+        u & = & \arcsin x \\
+        dv & = & \frac{dx}{x^2}
+    \end{array}\right. \implies \left.\begin{array}{rcl}
+        du & = & \frac{dx}{\sqrt{1 - x^2}} \\
+        v & = & -\frac{1}{x} 
+    \end{array}\right] =$$
+    $$= -\frac{\arcsin x}{x} + \int\frac{dx}{x\sqrt{1 - x^2}} = \left[\begin{array}{rcl}
+        t & = & \sqrt{1 - x^2} \\
+        dt & = & -\frac{xdx}{\sqrt{1 - x^2}} \\
+        dx & = & -\frac{\sqrt{1 - x^2}dt}{x} \\
+        x^2 & = & 1 - t^2
+    \end{array}\right] = -\frac{\arcsin x}{x} - \int\frac{\sqrt{1 - x^2}dt}{x^2\sqrt{1 - x^2}} = $$
+    $$= -\frac{\arcsin x}{x} - \int \frac{dt}{1 - t^2} = -\frac{\arcsin x}{x} - \frac{1}{2a}\ln\left|\frac{1 + t}{1 - t}\right| + C = $$
+    $$= -\left(\frac{\arcsin x}{x} + \frac{1}{2a}\ln\left|\frac{1 + \sqrt{1 - x^2}}{1 - \sqrt{1 - x^2}}\right|\right) + C$$
+    Ответ: $-\left(\frac{\arcsin x}{x} + \frac{1}{2a}\ln\left|\frac{1 + \sqrt{1 - x^2}}{1 - \sqrt{1 - x^2}}\right|\right) + C$
+
+    \item $\int\left(\frac{\ln x}{x}\right)^3 dx$:
+    $$\int\left(\frac{\ln x}{x}\right)^3 dx = \left[\begin{array}{rcl}
+        u & = & \ln^3 x \\
+        dv & = & \frac{dx}{x^3}
+    \end{array}\right. \implies \left.\begin{array}{rcl}
+        du & = & \frac{3\ln^2 xdx}{x} \\
+        v & = & -\frac{1}{2x^2}
+    \end{array}\right] =$$
+    $$= -\frac{\ln^3 x}{2x^2} + \frac{3}{2}\int\frac{\ln^2 x dx}{x^3} = \left[\begin{array}{rcl}
+        u & = & \ln^2 x \\
+        dv & = & \frac{dx}{x^3}
+    \end{array}\right. \implies \left.\begin{array}{rcl}
+        du & = & \frac{2\ln xdx}{x} \\
+        v & = & -\frac{1}{2x^2}
+    \end{array}\right] =$$
+    $$= -\frac{\ln^3 x}{2x^2} - \frac{3\ln^2 x}{4x^2} + \frac{3}{2}\int\frac{\ln xdx}{x^3} = \left[\begin{array}{rcl}
+        u & = & \ln x \\
+        dv & = & \frac{dx}{x^3}
+    \end{array}\right. \implies \left.\begin{array}{rcl}
+        du & = & \frac{dx}{x} \\
+        v & = & -\frac{1}{2x^2}
+    \end{array}\right] =$$
+    $$= -\frac{\ln^3 x}{2x^2} - \frac{3\ln^2 x}{4x^2} - \frac{3\ln x}{4 x^2} + \frac{3}{4}\int \frac{dx}{x^3} = -\frac{\ln^3 x}{2x^2} - \frac{3\ln^2 x}{4x^2} - \frac{3\ln x}{4 x^2} -\frac{3}{8x^2} + C$$
+    Ответ: $-\frac{\ln^3 x}{2x^2} - \frac{3\ln^2 x}{4x^2} - \frac{3\ln x}{4 x^2} -\frac{3}{8x^2} + C$
+
+    \item $\int x^2\sqrt{x^2 + 1}dx$:
+    
+    \item $\int xe^x\sin xdx$:
+    
+    \item $\int \cos^5 xdx$:
+    $$\int \cos^5 xdx = \frac{\sin x\cos^4 x}{5} + \frac{4}{5}\int\cos^3 xdx = \frac{\sin x\cos^4 x}{5} + \frac{4\sin x\cos^2 x}{25} + \frac{8}{15}\int\cos xdx =$$
+    $$= \frac{\sin x\cos^4 x}{5} + \frac{4\sin x\cos^2 x}{25} + \frac{8\sin x}{15} + C$$
+    Ответ: $\frac{\sin x\cos^4 x}{5} + \frac{4\sin x\cos^2 x}{25} + \frac{8\sin x}{15} + C$
+
+    \item $\int\frac{x^2e^x}{(x+2)^2}dx$:
+    $$\int\frac{x^2e^x}{(x+2)^2}dx = \left[\begin{array}{rcl}
+        u & = & x^2e^x \\
+        dv & = & \frac{dx}{(x + 2)^2}
+    \end{array}\right. \implies \left.\begin{array}{rcl}
+        du & = & (2 + x)xe^xdx\\
+        v & = & -\frac{1}{x + 2}
+    \end{array}\right] =$$
+    $$= -\frac{x^2e^x}{x + 2} + \int\frac{(2 + x)xe^x dx}{(2 + x)} = -\frac{x^2e^x}{x + 2} + \int xe^x dx =$$
+    $$= \left[\begin{array}{rcl}
+        u & = & x \\
+        dv & = & e^x dx
+    \end{array}\right. \implies \left.\begin{array}{rcl}
+        du & = & dx\\
+        v & = & e^x
+    \end{array}\right] = \frac{x^2e^x}{(x + 2)} + xe^x - \int e^xdx = \frac{x^2e^x}{(x + 2)} + xe^x - e^x + C$$
+    Ответ: $e^x\left(\frac{x^2}{(x + 2)} + x - 1\right) + C$
 \end{enumerate}
 \end{document}
