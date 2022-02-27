@@ -10,7 +10,9 @@ ____________________
 *.DS_Store
 *.docx
 *.exe
+*.in
 *.o
+*.out
 ____________________
 
 #Folders to ignore
