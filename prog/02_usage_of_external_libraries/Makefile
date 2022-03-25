@@ -1,11 +1,20 @@
-CC = clang
-FLAGS = -Wextra -Wall -g -c
-BIN = first_try
+CC = g++
+FLAGS = -Wextra -Wall -g -c -std=c++17
+INC = include
+SRC = src
+MODULES = main.o curlSetUp.o jsonSetUp.o
 
-all: $(BIN)
+main.exe: $(MODULES)
+	$(CC) $(MODULES) -o main.exe -lcurl
 
-%: %.c
-	$(CC) $(FLAGS) $< -o $@ -lcurl
+main.o: $(SRC)/main.cpp
+	$(CC) $(FLAGS) $(SRC)/main.cpp
+
+curlSetUp.o: $(SRC)/curlSetUp.cpp
+	$(CC) $(FLAGS) $(SRC)/curlSetUp.cpp
+
+jsonSetUp.o: $(SRC)/jsonSetUp.cpp
+	$(CC) $(FLAGS) $(SRC)/jsonSetUp.cpp
 
 clean:
-	$(RM) -rf $(BIN) *.dSYM
+	rm -f $(MODULES)
