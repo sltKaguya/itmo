@@ -18,7 +18,7 @@ type Node struct {
 type LinkedList struct {
 	first *Node
 	dist  float64
-	done  bool //if vertice in Queue - not done, once extracted - done
+	done  bool //if vertice not in MST - false, else true
 }
 
 type Graph struct {
@@ -29,31 +29,17 @@ func (list *LinkedList) pushNode(vertex int, weight float64) {
 	list.first = &Node{vertex: vertex, weight: weight, next: list.first}
 }
 
-func (g *Graph) findMin() int {
+func (g *Graph) findMin() (float64, int) {
 	minIndex := -1
 	min := math.Inf(1)
 	for i, elem := range g.adjList {
-		if elem.dist < min {
+		if elem.dist < min && !elem.done {
 			minIndex = i
 			min = elem.dist
 		}
 	}
 
-	return minIndex
-}
-
-func (l *LinkedList) findMin(g *Graph) float64 {
-	min := math.Inf(1)
-	elem := l.first
-	for elem != nil {
-		if elem.weight < min && !g.adjList[elem.vertex].done {
-			min = elem.weight
-		}
-
-		elem = elem.next
-	}
-
-	return min
+	return min, minIndex
 }
 
 func main() {
@@ -63,62 +49,54 @@ func main() {
 
 	scanner.Scan()
 	buffer := strings.Fields(scanner.Text())
-	nVertices, _ := strconv.Atoi(buffer[0])
+	countVertices, _ := strconv.Atoi(buffer[0])
 
-	vertices := make([][]float64, nVertices)
+	vertices := make([][]float64, countVertices)
 	for i := range vertices {
 		vertices[i] = make([]float64, 2)
 	}
 
-	i := 0
-	for scanner.Scan() {
+	for i := 0; i < countVertices; i++ {
+		scanner.Scan()
 		buffer = strings.Fields(scanner.Text())
 		vertices[i][0], _ = strconv.ParseFloat(buffer[0], 64)
 		vertices[i][1], _ = strconv.ParseFloat(buffer[1], 64)
-		i++
 	}
 
-	myGraph := &Graph{adjList: make([]LinkedList, nVertices)}
+	myGraph := &Graph{adjList: make([]LinkedList, countVertices)}
 	for i := range myGraph.adjList {
 		myGraph.adjList[i].dist = math.Inf(1)
 	}
 
 	for i, elemOne := range vertices {
 		for j, elemTwo := range vertices {
-			if i != j {
-				weight := math.Sqrt(math.Pow(elemTwo[0]-elemOne[0], 2) + math.Pow(elemTwo[1]-elemOne[1], 2))
-				myGraph.adjList[i].pushNode(j, weight)
-			}
+			weight := math.Sqrt(math.Pow(elemTwo[0]-elemOne[0], 2) + math.Pow(elemTwo[1]-elemOne[1], 2))
+			myGraph.adjList[i].pushNode(j, weight)
 		}
 	}
 
+	vertices = nil
+
 	myGraph.adjList[0].dist = 0
-	myGraph.adjList[0].done = true
 
 	MSTCount := 0
-	MSTWeight := 0
+	var MSTWeight float64 = 0
 
-	for MSTCount < nVertices {
-		i := myGraph.findMin()
+	for MSTCount < countVertices {
+		dist, i := myGraph.findMin()
 		elem := myGraph.adjList[i].first
 		for elem != nil {
-			myGraph.adjList[elem.vertex].dist = elem.weight
+			if myGraph.adjList[elem.vertex].dist > elem.weight {
+				myGraph.adjList[elem.vertex].dist = elem.weight
+			}
+			elem = elem.next
 		}
-		MSTWeight += int(myGraph.adjList[i].findMin(myGraph))
+
+		MSTWeight += dist
 		myGraph.adjList[i].done = true
 		MSTCount++
 	}
 
-	for i, elem := range myGraph.adjList {
-		fmt.Println("BOBA", i, elem.dist)
-		selem := elem.first
-		for selem != nil {
-			fmt.Println("biba", selem.vertex, " ", selem.weight)
-			selem = selem.next
-		}
-	}
-
-	fmt.Println(MSTWeight)
-
-	//fout, _ := os.Create("spantree.out")
+	fout, _ := os.Create("spantree.out")
+	fmt.Fprint(fout, MSTWeight)
 }
