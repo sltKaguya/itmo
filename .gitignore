@@ -20,6 +20,7 @@ ____________________
 #Folders to ignore
 .vscode
 main.exe.dSYM
+11_shortest_paths_in_graphs
 ____________________
 #Files to ignore
 prog/01_oop_classes/note.md
