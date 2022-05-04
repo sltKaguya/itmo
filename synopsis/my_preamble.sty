@@ -1,23 +1,53 @@
 \ProvidesPackage{my_preamble}
 
+%% Some needed packages
+\usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[russian,english]{babel}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage[tt=false]{libertine}
+\usepackage[libertine,smallerops]{newtxmath}
 
+%% Geometry setup
 \usepackage[margin=2cm]{geometry}
 
+%%Command for the header
+\usepackage{fancyhdr}
+%\newcommand{\MakeHeader}[3]{
+%    \setlenght{\headheight}{#1}
+%    \renewcommand{\headrulewidth}{.5pt}
+%    \fancyhead{}
+%    \fancyhead[L]{\textbf{#2}}
+%    \fancyhead[R]{\textbf{#3}}
+%}
+
+\newcommand{\MakeDoubleHeader}[4]{
+    \MakeHeader{30pt}{#1\\#2}{#3\\#4}
+}
+
+%% Create enumerated list for tasks
 \usepackage{enumitem}
 \newlist{tasks}{enumerate}{1}
 \setlist[tasks]{
     label=\arabic*.,
-    %%align=left
+    align=left,
     left=0pt .. 15pt,
     itemsep=8pt,
-    topsep=0pt
+    topsep=0pt,
 }
 
+\newlist{subtasks}{enumerate}{1}
+\setlist[subtasks]{
+    label=(\alph*),
+    align=left,
+    left=0pt .. 18pt,
+    itemsep=2pt,
+    topsep=2pt,
+}
+
+%% Setup footnote
 \usepackage{footnotebackref}
 \makeatletter
 \LetLtxMacro{\BHFN@Old@footnotemark}{\@footnotemark}
@@ -29,4 +59,9 @@
 }
 \makeatother
 
+%% Enqote text
 \usepackage{csquotes}
+
+%% Some commands to enjoy life
+\newcommand{\sets}[1]{\mathbb{#1}}
+\newcommand{\card}[1]{\left|#1\right|}
