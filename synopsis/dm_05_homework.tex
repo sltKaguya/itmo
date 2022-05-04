@@ -9,11 +9,13 @@
 \pagestyle{fancy}
 \fancyhf{}
 \setlength{\headheight}{30pt}
-\lhead{\textbf{Homework \#1}\\\textbf{Graph Theory}}
-\rhead{\textbf{sltKaguya\\\textbf{Group}}}
+\lhead{$\bm{\mathcal{H}}$\textbf{omework \#5}\\\textbf{Graph Theory}}
+\rhead{\textbf{sltKaguya, Group}\\\textbf{April 30 --- \today}}
 
 \newcommand{\graph}[1][G]{\mathcal{#1}}
+
 \newcommand{\op}[1]{\operatorname*{#1}}
+
 \newcommand{\minDegree}[1]{\delta(#1)}
 \newcommand{\maxDegree}[1]{\Delta(#1)}
 \newcommand{\graphRadius}[1]{\op{rad}(#1)}
@@ -23,6 +25,9 @@
 \newcommand{\graphCentroid}[1]{\op{centroid}(#1)}
 \newcommand{\vertexConnectivity}[1]{\varkappa(#1)}
 \newcommand{\edgeConnectivity}[1]{\lambda(#1)}
+
+\newcommand{\dist}[1]{\op{dist}(#1)}
+\newcommand{\blockGraph}[1]{\op{B}(#1)}
 \newcommand{\eccentricity}[1]{\varepsilon(#1)}
 
 \begin{document}
@@ -65,7 +70,34 @@
         
         \item Construct the Prüfer code for $T$.
     \end{subtasks}
-\end{tasks}
 
+    \item Prove \emph{rigorously} the following theorems:
+    
+    \begin{theorem}[Triangle Inequality]
+        For any connected graph $G = \angled{V, E}$:
+        $$\forall x, y, z \in V: \dist{x, y} + \dist{y, z} \geq \dist{x, z}$$
+    \end{theorem}
+
+    \begin{theorem}[Tree]
+        A connected graph $G = \angled{V, E}$ is a tree (\ie acyclic graph) \emph{iff} $\card{E} = \card{V} - 1$.
+    \end{theorem}
+
+    \begin{theorem}[Whitney]
+        For any graph $G:$ $\vertexConnectivity{G} \leq \edgeConnectivity{G} \leq \minDegree{G}$.
+    \end{theorem}
+
+    \begin{theorem}[Chartrand]
+        For a connected graph $G = \angled{V, E}$: if $\minDegree{G} \geq \floor{\frac{\card{V}}{2}}$, then $\edgeConnectivity{G} = \minDegree{G}$. 
+    \end{theorem}
+
+    \begin{theorem}[Menger]
+        For any pair of non-adjacent vertices $u$ and $v$ in an undirected graph, the size of the minimum \textit{vertex cut} is equal to the maximum number of pairwise \textit{internally vertex-disjoint paths} from $u$ to $v$.
+    \end{theorem}
+
+    \begin{theorem}[Harary]
+        Every block of a block graph\footnote{A block graph $H = \blockGraph{G}$ is an intersection graph of all blocks (biconnected components) of $G$, \ie each vertex $v \in V(H)$ corresponds to a block of $G$, and there is an edge $\{v, u\} \in E(H)$ iff \enquote{blocks} $v$ and $u$ share a cut vertex.} is a clique.
+    \end{theorem}
+
+\end{tasks}
 
 \end{document}
