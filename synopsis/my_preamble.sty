@@ -5,8 +5,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage[russian,english]{babel}
 
-\usepackage{amsmath}
+\usepackage{amsmath,mathtools}
 \usepackage{amssymb}
+\usepackage{amsthm,thmtools}
 \usepackage[tt=false]{libertine}
 \usepackage[libertine,smallerops]{newtxmath}
 
@@ -65,3 +66,18 @@
 %% Some commands to enjoy life
 \newcommand{\sets}[1]{\mathbb{#1}}
 \newcommand{\card}[1]{\left|#1\right|}
+\newcommand{\angled}[1]{\langle#1\rangle}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\ie}{\textit{i.e.}\ }
+
+%%STuff for theorems
+\usepackage[T1]{fontenc} %some problems with the T2A idk
+\declaretheoremstyle[
+    spaceabove=6pt,
+    spacebelow=6pt,
+    postheadspace=.5em,
+    notefont=\normalfont\scshape,
+]{mystyle}
+\declaretheorem[style=mystyle]{theorem}
+
+\usepackage{bm}
