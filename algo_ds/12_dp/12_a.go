@@ -23,7 +23,7 @@ func main() {
 		sequence[i], _ = strconv.Atoi(buffer[i])
 	}
 
-	dp := make([]int, n)     //Lenght of the largest increasing subsequence ending by i-th element
+	dp := make([]int, n)     //Lenght of the longest increasing subsequence ending by i-th element
 	parent := make([]int, n) //Index of previous elem in the LIS
 
 	for i := 0; i < n; i++ {
