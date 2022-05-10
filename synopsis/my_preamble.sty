@@ -48,6 +48,15 @@
     topsep=2pt,
 }
 
+\newlist{subsubtasks}{enumerate}{1}
+\setlist[subsubtasks]{
+    label=-,
+    align=left,
+    left=-10pt .. 0pt,
+    itemsep=2pt,
+    topsep=2pt,
+}
+
 %% Setup footnote
 \usepackage{footnotebackref}
 \makeatletter
@@ -69,6 +78,8 @@
 \newcommand{\angled}[1]{\langle#1\rangle}
 \newcommand{\floor}[1]{\lfloor#1\rfloor}
 \newcommand{\ie}{\textit{i.e.}\ }
+\newcommand{\eg}{\textit{e.g.}}
+\newcommand{\etc}{\textit{etc.}\ }
 
 %%STuff for theorems
 \usepackage[T1]{fontenc} %some problems with the T2A idk
