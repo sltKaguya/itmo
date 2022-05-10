@@ -1,0 +1,62 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{my_preamble}
+
+\geometry{
+    includehead,
+    headsep=\baselineskip,
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{30pt}
+\lhead{$\bm{\mathcal{H}}$\textbf{omework~\#5}\\\textbf{Graph~Theory}}
+\rhead{\textbf{sltKaguya,~Group}\\\textbf{April~30~---~\today}}
+
+\begin{document}
+    
+\begin{tasks}
+    \item Find the number of different 5-digit numbers using digits 1–9 under the given constraints. For each case, provide representative examples of (non-)complying numbers (\eg, 12345 and 52814 are suitable for (b), but 44521 and 935 are not) and derive a generic\footnote{Here, \enquote{generic formula} means \enquote{depending on the input data}. In this particular example, $n = 9$ and $k = 5$, but the sought formula must also be valid for all other (adequate) values of $n$ and $k$.\\Consequently, in this homework abstract $n$ and $k$ will be used in proofs of formulas instead of given numbers.} formula. Try to express the formula using standard combinatorial terms, \eg, $k$-combs $C_n^k$ and $k$-perms $P(n, k)$.
+
+    \begin{subtasks}
+        \item Digits \emph{can} be repeated.
+        
+        \begin{subsubtasks}
+            \item On the first place there could be one of the $n$ digits, so is for the second place \etc until $k$.
+        
+            \item So, there is $n$ options for the first digit, for each option there is also $n$ options for the second digit \etc until $k$: 
+            $$\underbrace{n \cdot n \cdot \ldots \cdot n}_{k \text{ times}}$$
+
+            \item  $\therefore$ the formula to count the k-perms will be 
+            $$\overline{A}_n^k = n^k$$
+
+            \item \emph{Example:} $\displaystyle\overline{A}_9^5 = 9^5 = 59049$
+        \end{subsubtasks}
+
+        \item Digits \emph{cannot} be repeated.
+        
+        \begin{subsubtasks}
+            \item On the first place there could be one of the $n$ digits, on the second -- one of $n - 1$ remaining \etc until $k$.
+            
+            \item So, there is $n$ options for the first digit, for each option there is $n - 1$ options (all possible except the first) \etc until $k$:
+            $$\underbrace{(n - 0) \cdot (n - 1) \cdot \ldots \cdot (n - (k - 1))}_{\text{from } 0 \text{ to } k - 1 \text{ as from } 1 \text{\textsuperscript{st} to } k \text{\textsuperscript{th} digit}}$$
+            To make this formula look more prettier and easier we can multiply and divide this by $(n - k)!$ then we'll get:
+            $$\frac{(n - 0) \cdot (n - 1) \cdot \ldots \cdot (n - (k - 1)) \cdot (n - k) \cdot \ldots \cdot 1}{(n - k)!} = \frac{n!}{(n - k)!}$$
+
+            \item $\therefore$ the formula to count the $k$-perms will be
+            $$A_n^k = \frac{n!}{(n - k)!}$$
+
+            \item \emph{Example:} $\displaystyle A_9^5 = \frac{9!}{(9 - 5)!} = 15120$
+        \end{subsubtasks}
+        
+        \item Digits \emph{can} be repeated and must be written in \emph{non-increasing}\footnote{A sequence $(x_n)$ is said to be \emph{strictly monotonically increasing} if each term is \emph{strictly greater} than the previous one, \ie $x_i < x_{i+1}$.\\A sequence is called \emph{non-increasing} if each term is \emph{less than or equal} to the previous one, \ie $x_i \geqslant x_{i+1}$.} order.
+        
+        \begin{subsubtasks}
+            \item So, there is $n$ options for the first digit, then, for each option $i$ there is $i$ options
+        \end{subsubtasks}
+        
+        \item Digits \emph{cannot} be repeated and must be written in \emph{increasing} order.
+        
+        \item Digits \emph{can} be repeated, must be written in \emph{non-decreasing} order, and the 4th digit must be 6.
+    \end{subtasks}
+\end{tasks}
+\end{document}
