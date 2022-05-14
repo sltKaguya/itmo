@@ -11,22 +11,28 @@
 \usepackage[tt=false]{libertine}
 \usepackage[libertine,smallerops]{newtxmath}
 
+\usepackage{datetime2}
+
 %% Geometry setup
 \usepackage[margin=2cm]{geometry}
 
 %%Command for the header
 \usepackage{fancyhdr}
-%\newcommand{\MakeHeader}[3]{
+%\newcommand{\MakeHeader}[3]{% {H}{L}{R}
 %    \setlenght{\headheight}{#1}
 %    \renewcommand{\headrulewidth}{.5pt}
 %    \fancyhead{}
 %    \fancyhead[L]{\textbf{#2}}
 %    \fancyhead[R]{\textbf{#3}}
 %}
-
-\newcommand{\MakeDoubleHeader}[4]{
-    \MakeHeader{30pt}{#1\\#2}{#3\\#4}
-}
+%
+%\newcommand{\MakeSingleHeader}[2]{% {L} {R}
+%    \MakeHeader{15pt}{#1}{#2}
+%}
+%
+%\newcommand{\MakeDoubleHeader}[4]{
+%    \MakeHeader{30pt}{#1\\#2}{#3\\#4}
+%}
 
 %% Create enumerated list for tasks
 \usepackage{enumitem}
