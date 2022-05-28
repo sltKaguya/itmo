@@ -1,0 +1,41 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{my_preamble}
+
+\geometry{
+    includehead,
+    headsep=\baselineskip,
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{30pt}
+\lhead{$\bm{\mathcal{D}}$\textbf{iscrete\\$\bm{\mathcal{M}\forall}$\textbf{th}}}
+\rhead{\textbf{sltKaguya}\\\textbf{May~27~---~\today}}
+
+\begin{document}
+\begin{center}
+    \section*{Recurrence Relations}
+\end{center}
+
+\wip Write definition, check grammary, is Fib correct? How to mark the \enquote{solution} part? Rewrite normally the \enquote{solution} part. Mb is it possible to deal with russian? Make arrows for \textbf{solve} \etc
+
+\ex Fibonacci's numbers is a reccurence relation were each number is the summary of the two precedent and the first two are 0 and 1:
+$$\begin{cases}F_n = F_{n-1} + F_{n-2} \\
+    F_0 = 0\\
+    F_1 = 1\end{cases}$$
+
+    $a_n = a_{n-1}+5$
+
+arrow\emph{sooolve???}
+
+The solution of a reccurency is the \emph{closed-form expression} of the n\textsuperscript{th} member of the reccurency based on the first, so the calculation may be done in O(1), not in O(n).
+
+arrow\emph{methods}
+\subsubsection*{Methods}
+\begin{tasks}
+    \item Guessing method.
+    \item Telescoping method.
+    \item Iteration method.
+    \item Characteristic equation.
+\end{tasks}
+\end{document}
