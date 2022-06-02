@@ -5,31 +5,78 @@
 class Point {
 public:
   /**
-   * @brief Construct a new Point object with given values or zeros for default
+   * @brief Constructor
    *
-   * @param x_val position on X-axis
-   * @param y_val position on Y-axis
+   * @param xVal position on X-axis (0 for default)
+   * @param yVal position on Y-axis (0 for default)
    */
-  Point(double x_val = 0, double y_val = 0);
+  Point(double xVal = 0, double yVal = 0);
 
   /**
-   * @brief Construct a copy of a given Point object
-   *
-   * @param other Point object to copy
-   */
-  Point(const Point &other);
-
-  /**
-   * @brief Default destructor
+   * @brief Destructor
    */
   ~Point();
 
   /**
+   * @brief Copy constructor
+   *
+   * @param other object to copy
+   */
+  Point(const Point &other);
+
+  /**
+   * @brief Copy assignment constructor
+   *
+   * @param other object to assign
+   */
+  Point &operator=(const Point &other);
+
+  /**
    * @brief Getter
    *
-   * @return Value on X-axis
+   * @return Positions on X and Y axes
    */
-  double getXVal() const;
+  double getPos(const double *xRead, const double *yRead) const;
+
+  /**
+   * @brief Getter
+   *
+   * @return Position on X-axis
+   */
+  double getPosX() const;
+
+  /**
+   * @brief Getter
+   *
+   * @return Position on Y-axis
+   */
+  double getPosY() const;
+
+  /**
+   * @brief Setter
+   *
+   * @param newX new value on X-axis
+   * @param newY new value on Y-axis
+   */
+  void setPos(double newX, double newY);
+
+  /**
+   * @brief Setter
+   *
+   * @param newX new value on X-axis
+   */
+  void setPosX(double newX);
+
+  /**
+   * @brief Setter
+   *
+   * @param newY new value on Y-axis
+   */
+  void setPosY(double newY);
 
 private:
+  /**
+   * @brief Position on X/Y-axis
+   */
+  double x, y;
 };
