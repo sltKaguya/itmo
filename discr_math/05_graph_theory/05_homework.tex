@@ -1,0 +1,103 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{../../synopsis/my_preamble}
+
+\geometry{
+    includehead,
+    headsep=\baselineskip,
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{30pt}
+\lhead{$\bm{\mathcal{H}}$\textbf{omework~\#5}\\\textbf{Graph~Theory}}
+\rhead{\textbf{sltKaguya,~Group}\\\textbf{April~30~---~\today}}
+
+\newcommand{\graph}[1][G]{\mathcal{#1}}
+
+\newcommand{\op}[1]{\operatorname*{#1}}
+
+\newcommand{\minDegree}[1]{\delta(#1)}
+\newcommand{\maxDegree}[1]{\Delta(#1)}
+\newcommand{\graphRadius}[1]{\op{rad}(#1)}
+\newcommand{\graphDiameter}[1]{\op{diam}(#1)}
+\newcommand{\graphGirth}[1]{\op{girth}(#1)}
+\newcommand{\graphCenter}[1]{\op{center}(#1)}
+\newcommand{\graphCentroid}[1]{\op{centroid}(#1)}
+\newcommand{\vertexConnectivity}[1]{\varkappa(#1)}
+\newcommand{\edgeConnectivity}[1]{\lambda(#1)}
+
+\newcommand{\dist}[1]{\op{dist}(#1)}
+\newcommand{\blockGraph}[1]{\op{B}(#1)}
+\newcommand{\eccentricity}[1]{\varepsilon(#1)}
+
+\begin{document}
+
+\begin{tasks}
+    \item The graph\footnote{Hereinafter, \enquote{graphs} are \enquote{simple, finite, undirected and unweighted}, unless stated otherwise.} of Europe\footnote{\url{https://simple.wikipedia.org/wiki/List_of_European_countries} used as reference.} $\graph^{*} = \langle V, E\rangle$ is defined as follows: each vertex $v \in V$ is a Europe country; two vertices are adjacent $(\{u, v\} \in E)$ if the corresponding countries share a land border. Let $\graph$ be the largest connected component of $\graph^{*}$.
+    
+    \begin{subtasks}
+        \item Draw $\graph^{*}$ with the minimum number of intersecting edges.
+        
+        \item Find $\card{V}$, $\card{E}$, $\minDegree{\graph}$, $\maxDegree{\graph}$, $\graphRadius{\graph}$, $\graphDiameter{\graph}$, $\graphGirth{\graph}$, $\graphCenter{\graph}$, $\vertexConnectivity{\graph}$, $\edgeConnectivity{\graph}$.
+
+        \item Find the minimum vertex coloring $Z: V \to \sets{N}$ of $\graph$.
+        
+        \item Find the minimum edge coloring $X: E \to \sets{N}$ of $\graph$.
+        
+        \item Find the maximum clique $Q \subseteq V$ of $\graph$.
+
+        \item Find the maximum stable set $S \subseteq V$ of $\graph$.
+        
+        \item Find the maximum matching $M \subseteq E$ of $\graph$.
+        
+        \item Find the minimum vertex cover $R \subseteq V$ of $\graph$.
+        
+        \item Find the minimum edge cover $F \subseteq E$ of $\graph$.
+        
+        \item Find the shortest closed walk $W$ that visits every vertex of $\graph$.
+        
+        \item Find the shortest closed walk $U$ that visits every edge of $\graph$.
+        
+        \item Find all biconnected components (blocks) and draw the block-cut tree of $\graph^{*}$.
+        
+        \item Find all 2-edge-connected components of $\graph^{*}$.
+        
+        \item Construct an SPQR tree of the largest biconected component of $\graph^{*}$.
+        
+        \item Add the weight function $w: E \to \sets{R}$ denoting the distance between capitals. Find the minimum (\textit{w.r.t.} the total weight of edges) spanning tree $T$ for the largest connected component of the weighted Europe graph $\graph^{*}_{w} = (V, E, w)$.
+        
+        \item Find $\graphCentroid{T}$ (\textit{w.r.t.} the ege weight function $w$).
+        
+        \item Construct the Prüfer code for $T$.
+    \end{subtasks}
+
+    \item Prove \emph{rigorously} the following theorems:
+    
+    \begin{theorem}[Triangle Inequality]
+        For any connected graph $G = \angled{V, E}$:
+        $$\forall x, y, z \in V: \dist{x, y} + \dist{y, z} \geq \dist{x, z}$$
+    \end{theorem}
+
+    \begin{theorem}[Tree]
+        A connected graph $G = \angled{V, E}$ is a tree (\ie acyclic graph) \emph{iff} $\card{E} = \card{V} - 1$.
+    \end{theorem}
+
+    \begin{theorem}[Whitney]
+        For any graph $G:$ $\vertexConnectivity{G} \leq \edgeConnectivity{G} \leq \minDegree{G}$.
+    \end{theorem}
+
+    \begin{theorem}[Chartrand]
+        For a connected graph $G = \angled{V, E}$: if $\minDegree{G} \geq \floor{\frac{\card{V}}{2}}$, then $\edgeConnectivity{G} = \minDegree{G}$. 
+    \end{theorem}
+
+    \begin{theorem}[Menger]
+        For any pair of non-adjacent vertices $u$ and $v$ in an undirected graph, the size of the minimum \textit{vertex cut} is equal to the maximum number of pairwise \textit{internally vertex-disjoint paths} from $u$ to $v$.
+    \end{theorem}
+
+    \begin{theorem}[Harary]
+        Every block of a block graph\footnote{A block graph $H = \blockGraph{G}$ is an intersection graph of all blocks (biconnected components) of $G$, \ie each vertex $v \in V(H)$ corresponds to a block of $G$, and there is an edge $\{v, u\} \in E(H)$ iff \enquote{blocks} $v$ and $u$ share a cut vertex.} is a clique.
+    \end{theorem}
+
+\end{tasks}
+
+\end{document}
