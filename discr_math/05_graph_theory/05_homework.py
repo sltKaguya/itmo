@@ -1,6 +1,6 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-euGraph = nx.Graph()
+euroGraph = nx.read_edgelist("05_edge_list.txt")
 
 #Cyprus, Iceland, Malta
