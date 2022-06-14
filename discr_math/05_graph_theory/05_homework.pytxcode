@@ -1,0 +1,33 @@
+=>PYTHONTEX#py#default#default#0#code#####37#
+    import networkx as nx
+    import mathplotlib.pyplot as plt
+=>PYTHONTEX#py#default#default#1#code#####48#
+            euroGraph = nx.read_adjlist(
+                "/Users/sltkaguya/Documents/itmo/discr_math/05_graph_theory/eurograph.adjlist.txt", delimiter="--")
+            nx.draw_planar(euroGraph, with_labels=True)
+            plt.show()
+=>PYTHONTEX:SETTINGS#
+version=0.18
+outputdir=pythontex-files-05_homework
+workingdir=.
+workingdirset=false
+gobble=none
+rerun=default
+hashdependencies=default
+makestderr=false
+stderrfilename=full
+keeptemps=none
+pyfuture=default
+pyconfuture=none
+pygments=true
+pygglobal=:GLOBAL||
+fvextfile=-1
+pyconbanner=none
+pyconfilename=stdin
+depythontex=false
+pygfamily=py|python3|
+pygfamily=pycon|pycon|
+pygfamily=sympy|python3|
+pygfamily=sympycon|pycon|
+pygfamily=pylab|python3|
+pygfamily=pylabcon|pycon|
