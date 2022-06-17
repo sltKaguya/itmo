@@ -1,12 +1,17 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage{../../synopsis/my_preamble}
 
-\usepackage{pythontex}
-
 \geometry{
     includehead,
     headsep=\baselineskip,
 }
+
+\usepackage{pgfplots}
+
+\DeclareUnicodeCharacter{2212}{-}
+\usepgfplotslibrary{groupplots,dateplot}
+\usetikzlibrary{patterns,shapes.arrows}
+\pgfplotsset{compat=newest}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -34,24 +39,13 @@
 
 \begin{document}
 
-\begin{pycode}
-    import networkx as nx
-    import mathplotlib.pyplot as plt
-\end{pycode}
-
 \begin{tasks}
-    \item The graph\footnote{Hereinafter, \enquote{graphs} are \enquote{simple, finite, undirected and unweighted}, unless stated otherwise.} of Europe\footnote{\url{https://simple.wikipedia.org/wiki/List_of_European_countries} used as reference.} $\graph^{*} = \langle V, E\rangle$ is defined as follows: each vertex $v \in V$ is a Europe country; two vertices are adjacent $(\{u, v\} \in E)$ if the corresponding countries share a land border. Let $\graph$ be the largest connected component of $\graph^{*}$.
+    \item The graph\footnote{Hereinafter, \enquote{graphs} are \enquote{simple, finite, undirected and unweighted}, unless stated otherwise.} of Europe $\graph^{*} = \langle V, E\rangle$ is defined as follows: each vertex $v \in V$ is a Europe country\footnote{\url{https://simple.wikipedia.org/wiki/List_of_European_countries} used as reference.}; two vertices are adjacent $(\{u, v\} \in E)$ if the corresponding countries share a land border. Let $\graph$ be the largest connected component of $\graph^{*}$.
     
     \begin{subtasks}
         \item Draw $\graph^{*}$ with the minimum number of intersecting edges.
         
-        \begin{pycode}
-            euroGraph = nx.read_adjlist(
-                "/Users/sltkaguya/Documents/itmo/discr_math/05_graph_theory/eurograph.adjlist.txt", delimiter="--")
-            nx.draw_planar(euroGraph, with_labels=True)
-            plt.show()
-        \end{pycode}
-        
+            \input{/Users/sltkaguya/Documents/itmo/discr_math/05_graph_theory/eurograph.tex}     
         \item Find $\card{V}$, $\card{E}$, $\minDegree{\graph}$, $\maxDegree{\graph}$, $\graphRadius{\graph}$, $\graphDiameter{\graph}$, $\graphGirth{\graph}$, $\graphCenter{\graph}$, $\vertexConnectivity{\graph}$, $\edgeConnectivity{\graph}$.
 
         \item Find the minimum vertex coloring $Z: V \to \sets{N}$ of $\graph$.
