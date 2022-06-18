@@ -42,11 +42,14 @@ df_borders = df_borders.drop(
     ["Total length of land borders", "No. of distinct land borders", "No. of distinct land neighbours"], axis=1)
 df_borders.columns = ['Country', 'Borders']
 
-print(df_borders)
+df_borders[['Country']]
+# for data in df_borders['Country']:
+#    print(data)
+# print(df_borders)
 
-euroGraph = nx.read_adjlist(
-    "/Users/sltkaguya/Documents/itmo/discr_math/05_graph_theory/eurograph.adjlist", delimiter="--")
-nx.draw_planar(euroGraph, with_labels=True)
+# euroGraph = nx.read_adjlist(
+#     "/Users/sltkaguya/Documents/itmo/discr_math/05_graph_theory/eurograph.adjlist", delimiter="--")
+# nx.draw_planar(euroGraph, with_labels=True)
 
-tikzplotlib.save(
-    "/Users/sltkaguya/Documents/itmo/discr_math/05_graph_theory/eurograph.tex")
+# tikzplotlib.save(
+#     "/Users/sltkaguya/Documents/itmo/discr_math/05_graph_theory/eurograph.tex")
