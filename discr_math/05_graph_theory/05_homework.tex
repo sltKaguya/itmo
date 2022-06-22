@@ -47,14 +47,22 @@
     
     \begin{subtasks}
         \item Draw $\graph^{*}$ with the minimum number of intersecting edges.
+            
+        The graph was created in Python. More about creation can be found \href{https://github.com/sltKaguya/itmo/blob/wip/discr_math/05_graph_theory/05_homework.ipynb}{here}.
+
+        A planar version of the graph (ugly):
         
-            % \begingroup
-            % \tikzset{every picture/.style={scale=1.5}}%
-            % \input{eurograph}
-            % \endgroup
+            \begingroup
+            \tikzset{every picture/.style={scale=1.5}}%
+            \input{eurograph}
+            \endgroup
+        \newpage
+        A prettier version (but unfinished):
+
             \includegraphics{Eurograph}
         \item Find $\card{V}$, $\card{E}$, $\minDegree{\graph}$, $\maxDegree{\graph}$, $\graphRadius{\graph}$, $\graphDiameter{\graph}$, $\graphGirth{\graph}$, $\graphCenter{\graph}$, $\vertexConnectivity{\graph}$, $\edgeConnectivity{\graph}$.
 
+        $\card{V} = 49$, $\card{E} = 92$
         \item Find the minimum vertex coloring $Z: V \to \sets{N}$ of $\graph$.
         
         \item Find the minimum edge coloring $X: E \to \sets{N}$ of $\graph$.
@@ -81,7 +89,7 @@
         
         \item Add the weight function $w: E \to \sets{R}$ denoting the distance between capitals. Find the minimum (\textit{w.r.t.} the total weight of edges) spanning tree $T$ for the largest connected component of the weighted Europe graph $\graph^{*}_{w} = (V, E, w)$.
         
-        \item Find $\graphCentroid{T}$ (\textit{w.r.t.} the ege weight function $w$).
+        \item Find $\graphCentroid{T}$ (\textit{w.r.t.} the edge weight function $w$).
         
         \item Construct the Prüfer code for $T$.
     \end{subtasks}
